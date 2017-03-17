@@ -7,7 +7,6 @@ const config = {
             algo: 'zoin',
             hashrate: 400,
             enabled: true,
-            ownShell: false,
         },
         {
             path: 'bin/cpuminer',
@@ -15,7 +14,6 @@ const config = {
             algo: 'x11',
             hashrate: 140000,
             enabled: true,
-            ownShell: false,
         },
     ],
     getBestMinerForAlgo: (algo) => {
@@ -29,6 +27,16 @@ const config = {
         });
 
         return bestMiner;
+    },
+    getHashrateArray: () => {
+        const hashrateArray = [];
+        config.miner.forEach((miner) => {
+            if (miner.enabled) {
+                hashrateArray.push({ algo: miner.algo, hashrate: miner.hashrate });
+            }
+        });
+
+        return hashrateArray;
     },
 };
 
