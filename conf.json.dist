@@ -1,0 +1,12 @@
+{
+  "connectionUrl": "http://localhost:9000",
+  "miner": [
+      {
+          "path": "bin/cpuminer",
+          "cmdline": "-a zoin -t 3 -o #URL# -u #USER# -p #PASS#",
+          "algo": "zoin",
+          "hashrate": 400,
+          "enabled": true
+      }
+  ]
+}
